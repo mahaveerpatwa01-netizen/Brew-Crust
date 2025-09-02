@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Brew & Crust Café</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">Brew & Crust Café</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container content two-col">
+    <div>
+      <h2>Get in Touch</h2>
+      <p>Email: info@brewandcrust.com</p>
+      <p>Phone: +91 9876543210</p>
+      <p>Address: Brew & Crust Café, Pune, Maharashtra, India</p>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks for reaching out! We will get back to you soon.');">
+        <label for="name">Name</label>
+        <input id="name" type="text" required />
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" required></textarea>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+    <div>
+      <img class="rounded" src="https://images.unsplash.com/photo-1442550528053-c431ecb55509?q=80&w=1200&auto=format&fit=crop" alt="Cozy café interior" />
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Brew & Crust Café · Designed by Mahaveer Patwa</p>
+    </div>
+  </footer>
+</body>
+</html>

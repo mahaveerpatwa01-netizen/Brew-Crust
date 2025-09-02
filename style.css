@@ -1,0 +1,75 @@
+/* ---------- Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg:#fffdf8; --text:#2b2b2b; --muted:#6b6b6b;
+  --brand:#5a3b2e; --brand-2:#8b5e3c; --card:#ffffff;
+  --shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+html,body{ height:100%; }
+body{ background:var(--bg); color:var(--text); font:16px/1.6 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+
+.container{ width:min(1120px, 92%); margin-inline:auto; }
+
+/* ---------- Header ---------- */
+.header{ background:var(--brand); position:sticky; top:0; z-index:50; }
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+.logo{ color:#f6e7d7; font-weight:700; text-decoration:none; letter-spacing:.5px; }
+.nav-links{ list-style:none; display:flex; gap:16px; }
+.nav-links a{ color:#f6e7d7; text-decoration:none; font-weight:600; opacity:.9; padding:8px 10px; border-radius:8px; }
+.nav-links a:hover, .nav-links a.active{ background:rgba(255,255,255,.12); }
+
+/* ---------- Hero ---------- */
+.hero{ min-height:68vh; display:grid; place-items:center; text-align:center; position:relative; }
+.hero-overlay::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35)); }
+.hero{ background-image:var(--hero); background-size:cover; background-position:center; }
+.hero-inner{ position:relative; color:white; }
+.hero h1{ font-size:clamp(32px, 5vw, 56px); letter-spacing:.3px; }
+.hero p{ margin-top:10px; font-size:clamp(16px, 2.4vw, 20px); opacity:.95; }
+.btn{ display:inline-block; padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:700; }
+.btn-primary{ margin-top:18px; background:#f6e7d7; color:#3b261b; box-shadow:var(--shadow); }
+.btn-primary:hover{ transform:translateY(-1px); }
+
+/* ---------- Sections ---------- */
+.content{ padding:48px 0; }
+.section-subtitle{ margin:28px 0 12px; color:var(--brand); letter-spacing:.3px; }
+
+/* ---------- Feature Cards ---------- */
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:36px auto 50px; }
+.feature-card{ background:var(--card); display:flex; gap:16px; padding:16px; border-radius:18px; box-shadow:var(--shadow); align-items:center; }
+.feature-card img{ width:120px; height:120px; object-fit:cover; border-radius:12px; }
+
+/* ---------- Card Grid (Menu) ---------- */
+.card-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:12px; }
+.card{ background:var(--card); border-radius:18px; overflow:hidden; box-shadow:var(--shadow); transition:transform .2s ease; }
+.card:hover{ transform:translateY(-3px); }
+.card img{ width:100%; height:180px; object-fit:cover; }
+.card-body{ padding:14px 14px 18px; }
+.card-body h4{ display:flex; align-items:center; justify-content:space-between; font-size:18px; margin-bottom:6px; }
+.price{ color:var(--brand-2); font-weight:800; }
+.card-body p{ color:var(--muted); font-size:14px; }
+
+/* ---------- Gallery ---------- */
+.gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:12px; }
+.gallery-grid img{ width:100%; height:280px; object-fit:cover; border-radius:16px; box-shadow:var(--shadow); }
+
+/* ---------- Forms & Utilities ---------- */
+.two-col{ display:grid; grid-template-columns:1.2fr .8fr; gap:22px; align-items:center; }
+.contact-form{ display:grid; gap:10px; margin-top:12px; }
+.contact-form input, .contact-form textarea{ border:1px solid #e6dfd8; border-radius:12px; padding:12px 14px; background:#fff; }
+.rounded{ border-radius:18px; box-shadow:var(--shadow); }
+.muted{ color:var(--muted); }
+
+/* ---------- Footer ---------- */
+.footer{ background:var(--brand); color:#f6e7d7; margin-top:40px; }
+.footer .container{ padding:16px 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px){
+  .grid-3{ grid-template-columns:1fr; }
+  .card-grid{ grid-template-columns:repeat(2,1fr); }
+  .two-col{ grid-template-columns:1fr; }
+}
+@media (max-width: 520px){
+  .card-grid{ grid-template-columns:1fr; }
+  .gallery-grid{ grid-template-columns:1fr; }
+}
